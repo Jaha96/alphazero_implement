@@ -5,17 +5,17 @@ class Game:
 
 	def __init__(self):		
 		self.currentPlayer = 1
-		self.gameState = GameState(np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], dtype=np.int), 1)
-		self.actionSpace = np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], dtype=np.int)
+		self.gameState = GameState(np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], dtype=np.int), 1)
+		self.actionSpace = np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], dtype=np.int)
 		self.pieces = {'1':'X', '0': '-', '-1':'O'}
-		self.grid_shape = (6,7)
-		self.input_shape = (2,6,7)
-		self.name = 'connect4'
+		self.grid_shape = (2,9)
+		self.input_shape = (2,2,9)
+		self.name = 'togyz_qumalaq'
 		self.state_size = len(self.gameState.binary)
 		self.action_size = len(self.actionSpace)
 
 	def reset(self):
-		self.gameState = GameState(np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], dtype=np.int), 1)
+		self.gameState = GameState(np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], dtype=np.int), 1)
 		self.currentPlayer = 1
 		return self.gameState
 
